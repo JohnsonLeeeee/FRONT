@@ -5,10 +5,10 @@ const app = getApp()
 Page({
   data: {
     imgUrls: [
-      'https://gitee.com/zhuyz3/images/raw/master/img1.jpg',
-      'https://gitee.com/zhuyz3/images/raw/master/img2.jpg',
-      'https://gitee.com/zhuyz3/images/raw/master/img3.jpg',
-      'https://gitee.com/zhuyz3/images/raw/master/img4.jpg'
+      'https://gitee.com/Johnsonleeeee/image/raw/master/test2.jpg',
+      'https://gitee.com/Johnsonleeeee/image/raw/master/test3.jpg',
+      'https://gitee.com/Johnsonleeeee/image/raw/master/test4.jpg',
+      'https://gitee.com/Johnsonleeeee/image/raw/master/test5.jpg'
     ],
     indicatorDots: true, //是否显示面板指示点
     autoplay: true, //是否自动切换
@@ -56,37 +56,38 @@ Page({
       num: 1
     }, {
       id: 2,
-        title: 'dish 2',
+      title: 'dish 2',
       price: 12,
       active: false,
       num: 1
     }, {
       id: 3,
-        title: 'dish 3',
+      title: 'dish 3',
       price: 15,
       active: false,
       num: 1
+      
     }, {
       id: 4,
-        title: 'dish 4',
+      title: 'dish 4',
       price: 18,
       active: false,
       num: 1
     }, {
       id: 5,
-        title: 'dish 5',
+      title: 'dish 5',
       price: 19,
       active: false,
       num: 1
     }, {
       id: 6,
-        title: 'dish 6',
+      title: 'dish 6',
       price: 20,
       active: false,
       num: 1
     }, {
       id: 7,
-        title: 'dish 7',
+      title: 'dish 7',
       price: 21,
       active: false,
       num: 1
@@ -94,7 +95,7 @@ Page({
   },
   // 下拉刷新
   onPullDownRefresh: function () {
-    setTimeout(()=>{
+    setTimeout(() => {
       wx.showToast({
         title: '成功加载数据',
         icon: 'success',
@@ -103,18 +104,18 @@ Page({
       wx.stopPullDownRefresh()
     }, 500);
   },
-  tabMenu: function(event) {
+  tabMenu: function (event) {
     let index = event.target.dataset.index;
     this.setData({
       tabIndex: index
     });
   },
   // 点击去购物车结账
-  card: function() {
+  card: function () {
     let that = this;
     // 判断是否有选中商品
     if (that.data.orderCount.num !== 0) {
-      // 跳转到购物车订单也
+      // 跳转到购物车订单页
       wx.redirectTo({
         url: '../order/order'
       });
@@ -126,7 +127,7 @@ Page({
       })
     }
   },
-  addOrder: function(event) {
+  addOrder: function (event) {
     let that = this;
     let id = event.target.dataset.id;
     let index = event.target.dataset.index;
@@ -173,7 +174,7 @@ Page({
       data: subOrders
     });
   },
-  onLoad: function() {
+  onLoad: function () {
 
   }
 })
